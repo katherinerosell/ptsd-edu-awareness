@@ -8,6 +8,8 @@ public class PauseManager : MonoBehaviour {
     [SerializeField]
     Transform UIPanel; //Will assign our panel to this variable so we can enable/disable it
 
+    [SerializeField]
+    Button PauseButton;
     //[SerializeField]
     //Text timeText; //Will assign our Time Text to this variable so we can modify the text it displays.
 
@@ -36,12 +38,14 @@ public class PauseManager : MonoBehaviour {
         isPaused = true;
         UIPanel.gameObject.SetActive(true); //turn on the pause menu
         Time.timeScale = 0f; //pause the game
+        PauseButton.gameObject.SetActive(false);
     }
 
     public void UnPause() {
         isPaused = false;
         UIPanel.gameObject.SetActive(false); //turn off pause menu
         Time.timeScale = 1f; //resume game
+        PauseButton.gameObject.SetActive(true);
     }
 
     public void QuitGame() {
@@ -49,6 +53,7 @@ public class PauseManager : MonoBehaviour {
     }
 
     public void Restart() {
-        SceneManager.LoadScene("Level1-2", LoadSceneMode.Single); ;
+        SceneManager.LoadScene("Level1-2", LoadSceneMode.Single); 
     }
+
 }
