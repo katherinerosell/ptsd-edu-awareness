@@ -8,6 +8,7 @@ public class InputText : MonoBehaviour {
     public Text testText;
     private Text text;
     public InputField inputField;
+    public string userInput;
     public Canvas canvas;
     public Font mysansFont;
 
@@ -19,6 +20,7 @@ public class InputText : MonoBehaviour {
     }
 
     public void updateText() {
+        userInput = inputField.text; 
         testText.text = inputField.text;
     }
 
