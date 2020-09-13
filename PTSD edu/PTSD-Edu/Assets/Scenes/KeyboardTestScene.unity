@@ -477,6 +477,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 366403891}
+        m_MethodName: spawnText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &366403889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testText: {fileID: 595062287}
   inputField: {fileID: 1703751928}
+  canvas: {fileID: 124984707}
+  mysansFont: {fileID: 12800000, guid: 412a0a0b662c57c47b205cbc60093fbe, type: 3}
 --- !u!1 &595062285
 GameObject:
   m_ObjectHideFlags: 0

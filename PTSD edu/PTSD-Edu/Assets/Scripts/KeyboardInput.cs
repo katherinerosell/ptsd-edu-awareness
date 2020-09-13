@@ -15,8 +15,8 @@ public class KeyboardInput : MonoBehaviour {
 
     void OnGUI() {
         //TouchScreenKeyboard.Open("Hello", TouchScreenKeyboardType.Default, true, false, false, false, "", 0);
-        stringToEdit = GUI.TextField(new Rect(10, 10, 200, 30), stringToEdit, 30);
-        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        //stringToEdit = GUI.TextField(new Rect(10, 10, 200, 30), stringToEdit, 30);
+        //keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
     }
 
     public void TextChange(string newText) {
