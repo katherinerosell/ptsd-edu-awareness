@@ -12,11 +12,15 @@ public class InputText : MonoBehaviour {
     public Canvas canvas;
     public Font mysansFont;
 
+    // the word that the user inputs, used as an enemy
+    public RectTransform wordRectT;
+
     void Start() {
         canvas = canvas.GetComponent<Canvas>();
         testText = testText.GetComponent<Text>();
         inputField = inputField.GetComponent<InputField>();
         if (mysansFont == null) { Debug.Log("sans font unreachable"); }
+        wordRectT = wordRectT.GetComponent<RectTransform>();
     }
 
     public void updateText() {
@@ -24,8 +28,15 @@ public class InputText : MonoBehaviour {
         testText.text = inputField.text;
     }
 
+    
     public void spawnText() {
 
+        //GameObject wordPrefab = Instantiate(enemyWord);
+        //wordPrefab.transform.position = new Vector3(0, 0, 0);
+
+        RectTransform wordRBPrefab = Instantiate(wordRectT);
+
+        /**
         // Create the Text GameObject.
         GameObject textGO = new GameObject();
         textGO.transform.parent = canvas.transform;
@@ -43,7 +54,8 @@ public class InputText : MonoBehaviour {
         rectTransform = text.GetComponent<RectTransform>();
         rectTransform.localPosition = new Vector3(0, 0, 0);
         rectTransform.sizeDelta = new Vector2(600, 200);
-
+        **/
     }
+    
 
 }

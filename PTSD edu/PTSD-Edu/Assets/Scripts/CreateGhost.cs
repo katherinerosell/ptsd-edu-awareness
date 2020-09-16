@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreateGhost : MonoBehaviour {
 
     private float myTimer;
     private int invokeNum;
     public Rigidbody2D aGhost;
+   
     private int phase1Time;
     private int phase2Time;
     private int phase3Time;
