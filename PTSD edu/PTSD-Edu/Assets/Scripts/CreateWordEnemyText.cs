@@ -1,6 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * Create Word Enemy Text
+ * Used in: Level 1, Level 2
+ * Creates WordText prefabs that move in from all 4 sides of the screen
+ * Author: Katherine Rosell
+ * 
+ * */
 
 public class CreateWordEnemyText : MonoBehaviour {
 
