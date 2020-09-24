@@ -9,14 +9,10 @@ using UnityEngine.UI;
  **/
 public class InputHolderClass : MonoBehaviour {
 
-    public static string mainWord;
-
-    void Start() {
-        mainWord = "default text";
-    }
+    public static string mainWord = "lightning";
 
     public string getMainWord() {
-        Debug.Log("Main word is: " + mainWord);
+        //Debug.Log("InputHolderClass ------ Main word is: " + mainWord);
         return mainWord;
     }
 
@@ -24,6 +20,5 @@ public class InputHolderClass : MonoBehaviour {
         Debug.Log("Input Word is: " + inputField.text + "  " + "Main Word before change is: " + mainWord );
         mainWord = inputField.text;
     }
-
 
 }

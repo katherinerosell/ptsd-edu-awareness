@@ -53,7 +53,8 @@ public class PauseManager : MonoBehaviour {
     }
 
     public void Restart() {
-        SceneManager.LoadScene("Level1-2", LoadSceneMode.Single); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UnPause(); // when scene restarts, time gets frozen for some reason. But Resuming helps move things again 
     }
 
 }

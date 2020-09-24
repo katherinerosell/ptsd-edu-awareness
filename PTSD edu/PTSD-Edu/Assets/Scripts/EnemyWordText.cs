@@ -5,19 +5,44 @@ using UnityEngine.UI;
 
 public class EnemyWordText : MonoBehaviour {
 
-    private Text wordText;
+    public Text wordText;
     private InputHolderClass holderClass;
-    private RectTransform PanelRect; // rectangular transform of the panel object
+    private Camera sceneCam;
+    private Canvas wtCanvas;
+
+    private void Awake() {
+        holderClass = GameObject.Find("_GM").GetComponent<InputHolderClass>(); // _GM object has the script attached
+        wordText.text = holderClass.getMainWord();
+    }
 
     private void Start() {
-     
-        PanelRect = GameObject.Find("CPSSPanel").GetComponent<RectTransform>();
-        holderClass = new InputHolderClass();
-        wordText = GetComponent<Text>();
         wordText.text = holderClass.getMainWord();
-        wordText.transform.parent = PanelRect;
-        wordText.transform.position = new Vector2(-328f, -181f);
-    
+        sceneCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        wtCanvas = GameObject.Find("WTCanvas").GetComponent<Canvas>();
+        wtCanvas.renderMode = RenderMode.WorldSpace;
+        wtCanvas.worldCamera = sceneCam;        
+    }
+
+    private void OnTriggerEnter2D(Collider2D c) {
+        //Debug.Log(c.gameObject.name.ToString());
+
+        if (c.gameObject.tag == "Enemy") {
+            //Debug.Log("e n e m y - ignore collision");
+        }
+
+        if (c.gameObject.tag == "KillWall")
+        {
+            //Debug.Log("self destruct");
+            Destroy(gameObject);
+        }
+
+        if (c.gameObject.tag == "Player")
+        {
+            //decrease 'health' points
+            //Debug.Log("player collision!!!");
+            Destroy(gameObject);
+        }
+
     }
 
 

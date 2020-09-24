@@ -12,10 +12,7 @@ public class TwoDAccelerometer : MonoBehaviour {
 
     private void Update() {
 
-
         //Vector3 tilt = new Vector3(Input.acceleration.x, Input.acceleration.y, Input.acceleration.z); //front and back acceleration have to be flipped
-
-
         //_ball.AddForce(new Vector2(Input.acceleration.x, Input.acceleration.y));
         //_ball.AddForce(new Vector2(tilt.x, tilt.y));
         _ball.velocity = new Vector2(Input.acceleration.x * 20, (Input.acceleration.y + 0.3f) * 22);

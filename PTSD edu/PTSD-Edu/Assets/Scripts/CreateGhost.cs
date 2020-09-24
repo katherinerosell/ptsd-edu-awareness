@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class CreateGhost : MonoBehaviour {
 
-    private float myTimer;
-    private int invokeNum;
+    private static float myTimer = 0f;
     public Rigidbody2D aGhost;
    
     private int phase1Time;
@@ -14,16 +13,12 @@ public class CreateGhost : MonoBehaviour {
     private int phase3Time;
 
     private void Start() {
-        invokeNum = 0;
-        myTimer = Time.deltaTime;
+        myTimer = Time.deltaTime - Time.deltaTime; // reset my timer to 0
         aGhost = aGhost.GetComponent<Rigidbody2D>();
         Invoke("InstantiateGhostWEST", 2f);
         phase1Time = 10;
         phase2Time = 40;
         phase3Time = 70;
-        //Invoke("InstantiateGhostEAST", 1f);
-        //Invoke("InstantiateGhostNORTH", 4f);
-        //Invoke("InstantiateGhostSOUTH", 1f);
     }
 
     private void Update()  {
@@ -32,7 +27,7 @@ public class CreateGhost : MonoBehaviour {
     }
 
     private void InstantiateGhostWEST() {
-
+        //Debug.Log(" WEST SIDE ");
         Rigidbody2D ghostPrefab = Instantiate(aGhost);
             float Ypos = Random.Range(-10f, 10f);
             ghostPrefab.position = new Vector3(-29.000f, Ypos, 15);
@@ -40,11 +35,12 @@ public class CreateGhost : MonoBehaviour {
         Invoke("InstantiateGhostWEST", Random.Range(1.2f, 1f));
         if ((int)myTimer == phase1Time) {
             Invoke("InstantiateGhostEAST", 1f);
-            Debug.Log("6 seconds passed, start ghost spawning from EAST");
+            //Debug.Log("6 seconds passed, start ghost spawning from EAST");
         }
     }
 
     private void InstantiateGhostEAST() {
+        //Debug.Log(" EAST SIDE ");
         Rigidbody2D ghostPrefab = Instantiate(aGhost);
         float Ypos = Random.Range(-10f, 10f);
         ghostPrefab.position = new Vector3(29.000f, Ypos, 15);
@@ -52,11 +48,12 @@ public class CreateGhost : MonoBehaviour {
         Invoke("InstantiateGhostEAST", Random.Range(1.2f, 1f));
         if ((int)myTimer == phase2Time) {
             Invoke("InstantiateGhostNORTH", 1f);
-            Debug.Log("35 seconds passed, start ghost spawning from NORTH");
+            //Debug.Log("35 seconds passed, start ghost spawning from NORTH");
         }
     }
 
     private void InstantiateGhostNORTH() {
+        //Debug.Log(" NORTH SIDE ");
         Rigidbody2D ghostPrefab = Instantiate(aGhost);
         float Xpos = Random.Range(-33f, 38f);
         ghostPrefab.position = new Vector3(Xpos, 20, 15);
@@ -64,16 +61,18 @@ public class CreateGhost : MonoBehaviour {
         Invoke("InstantiateGhostNORTH", Random.Range(1.2f, 3f));
         if ((int)myTimer == phase3Time) {
             Invoke("InstantiateGhostSOUTH", 1f);
-            Debug.Log("70 seconds passed, start ghost spawning from SOUTH");
+            //Debug.Log("70 seconds passed, start ghost spawning from SOUTH");
         }
     }
 
     private void InstantiateGhostSOUTH() {
+        //Debug.Log(" SOUTH SIDE ");
         Rigidbody2D ghostPrefab = Instantiate(aGhost);
         float Xpos = Random.Range(-33f, 38f);
         ghostPrefab.position = new Vector3(Xpos, -15, 15);
         ghostPrefab.velocity = new Vector2(0f, 4f);
         Invoke("InstantiateGhostSOUTH", Random.Range(1.2f, 3f));
     }
+
 
 }
