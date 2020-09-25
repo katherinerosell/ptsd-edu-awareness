@@ -25,7 +25,9 @@ public class CreateWordEnemyText : MonoBehaviour {
     void Start() {
         myTimer = Time.deltaTime - Time.deltaTime; // reset my timer to 0
         wordRB = wordText.GetComponent<Rigidbody2D>();
-        phase1Time = 10; phase2Time = 30; phase3Time = 70;
+        phase1Time = 10;
+        phase2Time = 30;
+        phase3Time = 70;
         Invoke("InstantiateEnemyWEST", 2f);
     }
 
@@ -37,48 +39,47 @@ public class CreateWordEnemyText : MonoBehaviour {
     private void InstantiateEnemyWEST() {
         //Debug.Log(" WEST SIDE ");
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
-        float Ypos = Random.Range(-10f, 10f);
-        wordPrefab.position = new Vector3(-29.000f, Ypos, 15);
+        float Ypos = Random.Range(-18f, 18f);
+        wordPrefab.position = new Vector3(-45.000f, Ypos, 15);
         wordPrefab.velocity = new Vector2(8f, 0f);
-        Invoke("InstantiateEnemyWEST", Random.Range(3f, 5f));
-        if ((int)myTimer == phase1Time) {
-            Invoke("InstantiateEnemyEAST", 1f);
-            //Debug.Log("CreateEnemyWordText -- Instantiate from EAST");
-
+        Invoke("InstantiateEnemyWEST", Random.Range(2f, 3f));
+        if (phase1Time-3 <= myTimer && myTimer <= phase1Time) {
+            Debug.Log("CreateEnemyWordText -- Instantiate from EAST");
+            Invoke("InstantiateEnemyEAST", 2f);
         }
     }
 
     private void InstantiateEnemyEAST() {
         //Debug.Log(" EAST SIDE ");
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
-        float Ypos = Random.Range(-10f, 10f);
-        wordPrefab.position = new Vector3(60f, Ypos, 15);
+        float Ypos = Random.Range(-18f, 18f);
+        wordPrefab.position = new Vector3(63f, Ypos, 15);
         wordPrefab.velocity = new Vector2(-8f, 0f);
-        Invoke("InstantiateEnemyEAST", Random.Range(1.5f, 3f));
-        if ((int)myTimer == phase2Time) {
-            Invoke("InstantiateEnemyNORTH", 1f);
-            //Debug.Log("35 seconds passed, start ghost spawning from NORTH");
+        Invoke("InstantiateEnemyEAST", Random.Range(2f, 4f));
+        if (phase2Time-4 <= myTimer && myTimer <= phase2Time) {
+            Debug.Log("CreateEnemyWordText -- Instantiate from NORTH");
+            Invoke("InstantiateEnemyNORTH", 2f);
         }
     }
 
-    private void InstantiateGhostNORTH() {
+    private void InstantiateEnemyNORTH() {
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
-        float Ypos = Random.Range(-10f, 10f);
-        wordPrefab.position = new Vector3(60f, Ypos, 15);
-        wordPrefab.velocity = new Vector2(-8f, 0f);
-        Invoke("InstantiateEnemyEAST", Random.Range(1.5f, 3f));
-        if ((int)myTimer == phase3Time) {
+        float Xpos = Random.Range(-40f, 63f);
+        wordPrefab.position = new Vector3(Xpos, 18, 15);
+        wordPrefab.velocity = new Vector2(0f, -4.5f);//move downwards
+        Invoke("InstantiateEnemyNORTH", Random.Range(4f, 5f));
+        if (phase3Time - 5 <= myTimer && myTimer <= phase3Time) {
+            Debug.Log("CreateEnemyWordText -- Instantiate from SOUTH");
             Invoke("InstantiateEnemySOUTH", 1f);
-            //Debug.Log("35 seconds passed, start ghost spawning from NORTH");
         }
     }
 
-    private void InstantiateGhostSOUTH() {
+    private void InstantiateEnemySOUTH() {
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
-        float Ypos = Random.Range(-10f, 10f);
-        wordPrefab.position = new Vector3(60f, Ypos, 15);
-        wordPrefab.velocity = new Vector2(-8f, 0f);
-        Invoke("InstantiateEnemySOUTH", Random.Range(1.5f, 3f));
+        float Xpos = Random.Range(-40f, 63f);
+        wordPrefab.position = new Vector3(Xpos, -17, 15);
+        wordPrefab.velocity = new Vector2(0f, 3f);// move upwards
+        Invoke("InstantiateEnemySOUTH", Random.Range(4f, 6f));
     }
 
 }

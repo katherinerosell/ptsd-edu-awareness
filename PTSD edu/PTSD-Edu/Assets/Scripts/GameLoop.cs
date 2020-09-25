@@ -18,4 +18,9 @@ public class GameLoop : MonoBehaviour {
         Time.timeScale = 1f; // resume or begin the level
     }
 
+    public void newLevel() {
+        Time.timeScale = 0f; //pause the game, no time runs?
+        promptPanel.SetActive(true);
+    }
+
 }
