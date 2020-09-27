@@ -20,20 +20,6 @@ public class PauseManager : MonoBehaviour {
         isPaused = false; //make sure isPaused is always false when our scene opens
     }
 
-    void Update() {
-
-        //timeText.text = "Time Since Startup: " + Time.timeSinceLevelLoad; //Tells us the time since the scene loaded
-
-        //If player presses escape and game is not paused. Pause game. If game is paused and player presses escape, unpause.
-        /**
-         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
-             Pause();
-         else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
-             UnPause();
-         **/
-        
-    }
-
     public void Pause() {
         isPaused = true;
         UIPanel.gameObject.SetActive(true); //turn on the pause menu

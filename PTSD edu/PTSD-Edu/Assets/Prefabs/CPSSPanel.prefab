@@ -77,8 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Type in the first word that comes to your mind when you hear the words\nupsetting\r
-    thoughts/images"
+  m_Text: 'default text '
 --- !u!1 &2927152130204301603
 GameObject:
   m_ObjectHideFlags: 0

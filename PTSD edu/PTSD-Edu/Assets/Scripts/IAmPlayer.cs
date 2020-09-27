@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class IAmPlayer : MonoBehaviour {
 
     private static int blipPoints;
-    public Text hitText;
+    //public Text hitText;
 
     // Start is called before the first frame update
     void Start() {
         blipPoints = 5;
-        hitText = hitText.GetComponent<Text>();
+        //hitText = hitText.GetComponent<Text>();
     }
 
 

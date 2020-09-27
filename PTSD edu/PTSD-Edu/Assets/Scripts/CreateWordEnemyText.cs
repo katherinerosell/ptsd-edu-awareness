@@ -13,17 +13,30 @@ public class CreateWordEnemyText : MonoBehaviour {
 
     private static float myTimer = 0f;
     public GameObject wordText;
+
     private Rigidbody2D wordRB;
     private RectTransform rectTransform;
+    private InputHolderClass holderClass;
+    private GameLoop gameLoopScript;
     //public float speed = 2f;
 
     private int phase1Time;
     private int phase2Time;
     private int phase3Time;
 
+    private bool level2On;
+
+    private void Awake() {
+        gameLoopScript = GameObject.Find("_GM").GetComponent<GameLoop>();
+        holderClass = GameObject.Find("_GM").GetComponent<InputHolderClass>(); // _GM object has the script attached
+        holderClass.setLevel(1);
+        level2On = false; // level 2 is not active YET
+        // set the level we are on to LEVEL 1
+    }
+
 
     void Start() {
-        myTimer = Time.deltaTime - Time.deltaTime; // reset my timer to 0
+        myTimer = 0f;
         wordRB = wordText.GetComponent<Rigidbody2D>();
         phase1Time = 10;
         phase2Time = 30;
@@ -33,7 +46,15 @@ public class CreateWordEnemyText : MonoBehaviour {
 
     private void Update() {
         myTimer += Time.deltaTime;
-        Debug.Log("CreateEnemyWordText -- Timer as INT: " + (int)myTimer);
+        // Debug.Log("CreateEnemyWordText -- Timer as INT: " + (int)myTimer);
+
+
+        if ((100 <= myTimer && myTimer <= 101) && level2On == false) {
+            level2On = true;
+            Debug.Log("  Level 2 Start  ----   Display Player Shadow Box  ");
+            holderClass.setLevel(2);
+            gameLoopScript.newLevel();
+        }
     }
 
     private void InstantiateEnemyWEST() {
@@ -67,7 +88,7 @@ public class CreateWordEnemyText : MonoBehaviour {
         float Xpos = Random.Range(-40f, 63f);
         wordPrefab.position = new Vector3(Xpos, 18, 15);
         wordPrefab.velocity = new Vector2(0f, -4.5f);//move downwards
-        Invoke("InstantiateEnemyNORTH", Random.Range(4f, 5f));
+        Invoke("InstantiateEnemyNORTH", Random.Range(4f, 6f));
         if (phase3Time - 5 <= myTimer && myTimer <= phase3Time) {
             Debug.Log("CreateEnemyWordText -- Instantiate from SOUTH");
             Invoke("InstantiateEnemySOUTH", 1f);
