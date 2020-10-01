@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleSceneOne.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KeyboardTestScene.unity
     guid: 17fc27a9a8135534abe902763c9612b8
   - enabled: 1
     path: Assets/Scenes/Level1-2.unity
     guid: 9926618d746a0c54b890e1d8fc9e0a98
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 4fab5531b10788c47a1472f65a990931
   m_configObjects: {}

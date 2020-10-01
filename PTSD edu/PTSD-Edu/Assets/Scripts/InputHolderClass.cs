@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 /**
  * Input Holder Class
  * 
@@ -10,15 +11,23 @@ using UnityEngine.UI;
 public class InputHolderClass : MonoBehaviour {
 
     public static string mainWord = "lightning";
-    public static int _lvlNum = 1;
+    public static int _lvlNum;
+    private Scene scene;
     private static string[] prompts = new string[] {
         "Type in the first word that comes to your mind when you hear the words upsetting thoughts/images",
-        "Type in the first word that comes to your mind when you hear the word nightmares"
-
+        "Type in the first word that comes to your mind when you hear the word nightmares",
+        "Type in the first word that comes to your mind when you hear the words recurring events/reexperiencing",
+        "Type in the first word that comes to your mind when you hear the words feeling upset"
     };
 
-    private void Update()
-    {
+    private void Awake() {
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Level3") setLevel(3);
+        Debug.Log("InputHolderClass  --  Level is: " + _lvlNum);
+
+    }
+    
+    private void Update() {
         Debug.Log("InputHolderClass -- LEVEL NUM " + _lvlNum);
     }
 

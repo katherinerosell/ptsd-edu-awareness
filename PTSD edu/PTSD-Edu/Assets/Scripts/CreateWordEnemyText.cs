@@ -23,7 +23,6 @@ public class CreateWordEnemyText : MonoBehaviour {
     private int phase1Time;
     private int phase2Time;
     private int phase3Time;
-
     private bool level2On;
 
     private void Awake() {
@@ -33,7 +32,6 @@ public class CreateWordEnemyText : MonoBehaviour {
         level2On = false; // level 2 is not active YET
         // set the level we are on to LEVEL 1
     }
-
 
     void Start() {
         myTimer = 0f;
@@ -47,7 +45,6 @@ public class CreateWordEnemyText : MonoBehaviour {
     private void Update() {
         myTimer += Time.deltaTime;
         // Debug.Log("CreateEnemyWordText -- Timer as INT: " + (int)myTimer);
-
 
         if ((100 <= myTimer && myTimer <= 101) && level2On == false) {
             level2On = true;
