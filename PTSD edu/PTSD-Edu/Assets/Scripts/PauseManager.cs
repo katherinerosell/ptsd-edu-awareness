@@ -6,30 +6,28 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour {
 
     [SerializeField]
-    Transform UIPanel; //Will assign our panel to this variable so we can enable/disable it
+    Transform MenuPanel; //Will assign our panel to this variable so we can enable/disable it
 
     [SerializeField]
     Button PauseButton;
-    //[SerializeField]
-    //Text timeText; //Will assign our Time Text to this variable so we can modify the text it displays.
 
-    bool isPaused; //Used to determine paused state
+    bool isPaused; // Used to determine paused state
 
     void Start() {
-        UIPanel.gameObject.SetActive(false); //make sure our pause menu is disabled when scene starts
+        MenuPanel.gameObject.SetActive(false); //make sure our pause menu is disabled when scene starts
         isPaused = false; //make sure isPaused is always false when our scene opens
     }
 
     public void Pause() {
         isPaused = true;
-        UIPanel.gameObject.SetActive(true); //turn on the pause menu
+        MenuPanel.gameObject.SetActive(true); // turn on the pause menu
         Time.timeScale = 0f; //pause the game
         PauseButton.gameObject.SetActive(false);
     }
 
     public void UnPause() {
         isPaused = false;
-        UIPanel.gameObject.SetActive(false); //turn off pause menu
+        MenuPanel.gameObject.SetActive(false); //turn off pause menu
         Time.timeScale = 1f; //resume game
         PauseButton.gameObject.SetActive(true);
     }
