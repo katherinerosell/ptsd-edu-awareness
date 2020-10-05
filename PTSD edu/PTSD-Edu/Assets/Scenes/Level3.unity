@@ -3622,6 +3622,7 @@ MonoBehaviour:
   orb: {fileID: 1694896786}
   portals: []
   newColor: {r: 0.8113208, g: 0.46452636, b: 0.16838735, a: 1}
+  defaultColor: {r: 0.4745098, g: 0.77254903, b: 0.78431374, a: 0}
 --- !u!1 &2078899165
 GameObject:
   m_ObjectHideFlags: 0

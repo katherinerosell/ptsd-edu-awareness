@@ -17,7 +17,8 @@ public class InputHolderClass : MonoBehaviour {
         "Type in the first word that comes to your mind when you hear the words upsetting thoughts/images",
         "Type in the first word that comes to your mind when you hear the word nightmares",
         "Type in the first word that comes to your mind when you hear the words recurring events/reexperiencing",
-        "Type in the first word that comes to your mind when you hear the words feeling upset"
+        "Type in the first word that comes to your mind when you hear the words feeling upset",
+        "This is level 4 default text"
     };
 
     private void Awake() {

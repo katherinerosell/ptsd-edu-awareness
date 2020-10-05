@@ -22,7 +22,6 @@ public class Teleport : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D c) {
 
         if (c.gameObject.name == "portal3") {
-            Debug.Log(c.gameObject.name);
             rb.position = spawnPoint22.position;
         }
         if (c.gameObject.name == "portal1") {
@@ -46,9 +45,6 @@ public class Teleport : MonoBehaviour {
         if (c.gameObject.name == "portal44") {
             rb.position = spawnPoint1.position;
         }
-
-
     }
-
 
 }
