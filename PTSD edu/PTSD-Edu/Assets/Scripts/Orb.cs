@@ -13,6 +13,7 @@ public class Orb : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D c) {
+
         Debug.Log("Game Object: " + c.gameObject.name);
         tempObj = portalOrbColor.getColorPortal();
         if (c.gameObject == tempObj) {

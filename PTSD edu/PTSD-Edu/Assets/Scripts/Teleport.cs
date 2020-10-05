@@ -43,8 +43,8 @@ public class Teleport : MonoBehaviour {
         if (c.gameObject.name == "portal33") {
             rb.position = spawnPoint2.position;
         }
-        if (c.gameObject.name == "portal1") {
-            rb.position = spawnPoint44.position;
+        if (c.gameObject.name == "portal44") {
+            rb.position = spawnPoint1.position;
         }
 
 

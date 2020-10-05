@@ -50,6 +50,7 @@ public class PortalOrbColor : MonoBehaviour {
 
     public void CorrectPortalCollision() {
         correctPortals++;
+        Debug.Log("PortalOrbColor -- CorrectPortalCollision -- Correct Portals: " + correctPortals);
     }
 
 
