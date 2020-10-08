@@ -18,18 +18,18 @@ public class InputHolderClass : MonoBehaviour {
         "Type in the first word that comes to your mind when you hear the word nightmares",
         "Type in the first word that comes to your mind when you hear the words recurring events/reexperiencing",
         "Type in the first word that comes to your mind when you hear the words feeling upset",
-        "This is level 4 default text"
+        "This is level 7 default text, but the fifth level"
     };
 
     private void Awake() {
         scene = SceneManager.GetActiveScene();
         if (scene.name == "Level3") setLevel(3);
-        Debug.Log("InputHolderClass  --  Level is: " + _lvlNum);
-
+        // Debug.Log("InputHolderClass  --  Level is: " + _lvlNum);
+        if (scene.name == "Level4") setLevel(4);
     }
     
     private void Update() {
-        Debug.Log("InputHolderClass -- LEVEL NUM " + _lvlNum);
+        //Debug.Log("InputHolderClass -- LEVEL NUM " + _lvlNum);
     }
 
     public void setLevel(int lvl) {
