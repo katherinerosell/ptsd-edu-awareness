@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /**
- * Create Word Enemy Text
+ * Create Word Enemy Text script is attached to the CreateEnemy empty game object
  * Used in: Level 1, Level 2
  * Creates WordText prefabs that move in from all 4 sides of the screen
  * Author: Katherine Rosell

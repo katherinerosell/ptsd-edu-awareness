@@ -20,7 +20,6 @@ public class PortalOrbColor : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     public GameObject[] portals;
     private int portalNum = 2; 
-
     private int correctPortals;
 
     [SerializeField]
@@ -37,13 +36,16 @@ public class PortalOrbColor : MonoBehaviour {
         // initialize the size of an array to avoid "Index out of bounds exception"     
         orbRender.color = newColor;
         ChangeColor();
+        newColor.a = 1.0f;
+        defaultColor.a = 1.0f;
     }
 
     private void Update() {
 
         if (correctPortals == 5) {
             // done with level 3, go to level 4
-            SceneManager.LoadScene("Leve4");
+            Debug.Log("Completed 5 portal collisions, go to level 4");
+            SceneManager.LoadScene("Level4");
         }
 
     }
@@ -59,8 +61,8 @@ public class PortalOrbColor : MonoBehaviour {
 
     public GameObject getColorPortal() {
         // return portals[portalNum];
-        Debug.Log("Portals Index: " + portalNum);
-        Debug.Log("Portal Name: " + portals[portalNum]);
+        // Debug.Log("Portals Index: " + portalNum);
+        // Debug.Log("Portal Name: " + portals[portalNum]);
         return portals[portalNum];
     }
 
@@ -69,6 +71,7 @@ public class PortalOrbColor : MonoBehaviour {
         // set the previous portal to the regular default color
         spriteRenderer = portals[portalNum].GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultColor;
+        defaultColor.a = 1.0f;
         Debug.Log("Correct Portals: " + correctPortals);
         ChangeColor();
     }

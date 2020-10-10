@@ -18,7 +18,10 @@ public class InputHolderClass : MonoBehaviour {
         "Type in the first word that comes to your mind when you hear the word nightmares",
         "Type in the first word that comes to your mind when you hear the words recurring events/reexperiencing",
         "Type in the first word that comes to your mind when you hear the words feeling upset",
-        "This is level 7 default text, but the fifth level"
+        "Level 5 prompt here",
+        "Level 6 prompt here",
+        "Trying to avoid activities, people, or places that remind you of the traumatic event",
+        "Level 8 prompt here"
     };
 
     private void Awake() {
@@ -26,6 +29,7 @@ public class InputHolderClass : MonoBehaviour {
         if (scene.name == "Level3") setLevel(3);
         // Debug.Log("InputHolderClass  --  Level is: " + _lvlNum);
         if (scene.name == "Level4") setLevel(4);
+        if (scene.name == "Level7") setLevel(7);
     }
     
     private void Update() {

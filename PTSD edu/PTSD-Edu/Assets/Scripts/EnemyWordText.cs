@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+/*
+ * This script is attached to the prefab, WordText.
+ * It handles the general setup of the object, using the
+ * _GM, or game manager
+ * Author: Katherine Rosell
+ * Date: August 2020
+ * */
 
 public class EnemyWordText : MonoBehaviour {
 
@@ -21,28 +28,6 @@ public class EnemyWordText : MonoBehaviour {
         wtCanvas = GameObject.Find("WTCanvas").GetComponent<Canvas>();
         wtCanvas.renderMode = RenderMode.WorldSpace;
         wtCanvas.worldCamera = sceneCam;        
-    }
-
-    private void OnTriggerEnter2D(Collider2D c) {
-        //Debug.Log(c.gameObject.name.ToString());
-
-        if (c.gameObject.tag == "Enemy") {
-            //Debug.Log("e n e m y - ignore collision");
-        }
-
-        if (c.gameObject.tag == "KillWall")
-        {
-            //Debug.Log("self destruct");
-            Destroy(gameObject);
-        }
-
-        if (c.gameObject.tag == "Player")
-        {
-            //decrease 'health' points
-            //Debug.Log("player collision!!!");
-            Destroy(gameObject);
-        }
-
     }
 
 

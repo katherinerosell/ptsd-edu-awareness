@@ -18,7 +18,7 @@ public class Orb : MonoBehaviour {
         
         if (c.gameObject == portalOrbColor.getColorPortal()) {
             portalOrbColor.CorrectPortalCollision();
-            Debug.Log("Orb -- Collision(Collision2D) -- Correct Collision : " + c.gameObject.name);
+            // Debug.Log("Orb -- Collision(Collision2D) -- Correct Collision : " + c.gameObject.name);
         }
     }
 
