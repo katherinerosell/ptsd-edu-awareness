@@ -30,4 +30,13 @@ public class WordTextCollisions : MonoBehaviour {
         } 
     }
 
+    // If isTrigger is disabled, still account for collisions
+    private void OnCollisionEnter2D(Collision2D c) {
+        if (c.gameObject.tag == "KillWall") Destroy(gameObject);
+        if (c.gameObject.tag == "Player") {
+            amPlayer.playerHit();
+            Destroy(gameObject);               
+        } 
+    }
+
 }

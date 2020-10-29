@@ -21,7 +21,7 @@ public class InputHolderClass : MonoBehaviour {
         "Level 5 prompt here",
         "Level 6 prompt here",
         "Trying to avoid activities, people, or places that remind you of the traumatic event",
-        "Level 8 prompt here",
+        "Type in the first word that comes to your mind when you hear the words not being able to remember an important part of an event",
         "Level 9 prompt here",
         "Type in the first word that comes to your mind when you hear the words not feeling close to people around you",
         "Level 11 prompt here",
@@ -41,6 +41,8 @@ public class InputHolderClass : MonoBehaviour {
         if (scene.name == "Level7") setLevel(7);
         if (scene.name == "Level8") setLevel(8);
         if (scene.name == "Level10") setLevel(10);
+        if (scene.name == "Level14") setLevel(14);
+        if (scene.name == "Level16") setLevel(16);
     }
 
     public void setLevel(int lvl) {

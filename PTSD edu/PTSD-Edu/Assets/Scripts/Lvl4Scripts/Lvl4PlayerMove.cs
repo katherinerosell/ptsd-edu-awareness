@@ -13,4 +13,5 @@ public class Lvl4PlayerMove : MonoBehaviour{
     void Update() {
         _ball.velocity = new Vector2(Input.acceleration.x * 20, 0);
     }
+
 }

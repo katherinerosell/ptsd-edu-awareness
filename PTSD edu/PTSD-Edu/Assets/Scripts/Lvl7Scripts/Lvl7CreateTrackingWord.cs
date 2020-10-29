@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 /*
  * Script is attached to the CreateTrackingEnemy empty 
  * Game Object in Level7. 
@@ -9,11 +11,25 @@ public class Lvl7CreateTrackingWord : MonoBehaviour {
     public GameObject wordText;
     private Rigidbody2D wordRB;
     private int spawnTime; // spawn a new word in this amount of time
+    private float myTimer;
+
+    public Transform westSpawn;
+    public Transform eastSpawn;
+    public Transform northSpawn;
+    public Transform southSpawn;
 
     void Start() {
+        myTimer = 0f;
         spawnTime = 6;
         wordRB = wordText.GetComponent<Rigidbody2D>();
         Invoke("InstantiateWord", 2f);
+    }
+
+    private void Update() {
+        myTimer += Time.deltaTime;
+        if (myTimer >= 40f && myTimer <= 41f) {
+            SceneManager.LoadScene("Level8");
+        }
     }
 
     private void InstantiateWord() {
