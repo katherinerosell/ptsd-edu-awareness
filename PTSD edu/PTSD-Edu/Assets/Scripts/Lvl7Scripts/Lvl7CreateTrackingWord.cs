@@ -18,6 +18,12 @@ public class Lvl7CreateTrackingWord : MonoBehaviour {
     public Transform northSpawn;
     public Transform southSpawn;
 
+    private Transform[] spawnPoints;
+
+    private void Awake()  {
+        spawnPoints = new Transform[] { westSpawn, eastSpawn, northSpawn, southSpawn};
+    }
+
     void Start() {
         myTimer = 0f;
         spawnTime = 6;
@@ -33,7 +39,9 @@ public class Lvl7CreateTrackingWord : MonoBehaviour {
     }
 
     private void InstantiateWord() {
-        Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
+        int tempInt = Random.Range(0, 4);
+        Transform tempTransform = spawnPoints[tempInt];
+        Rigidbody2D wordPrefab = Instantiate(wordRB, tempTransform);
         wordPrefab.gameObject.AddComponent<TrackingEnemy>();
         Invoke("InstantiateWord", spawnTime);
     }

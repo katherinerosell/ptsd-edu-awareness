@@ -23,7 +23,7 @@ public class TrackingEnemy : MonoBehaviour {
     private void Start() {
         _pillarInt = 2; // pillarA = 0, pillarB = 1
         inZone = false;
-        speed = 5f;
+        speed = 3f;
         _player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         wordRB = GetComponent<Rigidbody2D>();
     }

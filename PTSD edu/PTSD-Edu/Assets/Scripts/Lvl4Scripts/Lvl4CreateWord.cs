@@ -16,8 +16,8 @@ public class Lvl4CreateWord : MonoBehaviour {
     private float max;
 
     void Start() {
-        fallVelocity = -10f;
-        min = 2f; max = 5f;
+        fallVelocity = -9f;
+        min = 3f; max = 5f;
         wordRB = wordRB.GetComponent<Rigidbody2D>();
         myTimer = 0f;
         Invoke("InstantiateFallingWord", 1.5f);
@@ -26,8 +26,8 @@ public class Lvl4CreateWord : MonoBehaviour {
 
     void Update() {
         myTimer = myTimer + Time.deltaTime;
-        // after 2 minutes, move onto the next level
-        if ((int)myTimer >= 120 && (int)myTimer <= 121) {
+        // after 1.5 minutes, move onto the next level
+        if ((int)myTimer >= 90 && (int)myTimer <= 91) {
             SceneManager.LoadScene("Level7");
         } else { }
     }
@@ -41,13 +41,13 @@ public class Lvl4CreateWord : MonoBehaviour {
     }
 
     private void FallRate() {
-        if (min <= 0.4f) {
+        if (min <= 2.4f) { // repeats 6 times until 3 reached 2.4; approx. 60 second
 
         }
         else {
-            min -= 0.2f;
-            max -= 0.5f;
-            fallVelocity -= 1.5f;
+            min -= 0.1f;
+            max -= 0.4f;
+            // fallVelocity -= 0.1f;
             InstantiateFallingWord();
         }        
     }

@@ -6,7 +6,6 @@ public class Lvl8CreateWord : MonoBehaviour {
 
     public GameObject wordText;
     private Rigidbody2D wordRB;
-    private float spawnRate;
 
     private void Start() {
         wordRB = wordText.GetComponent<Rigidbody2D>();
@@ -19,7 +18,7 @@ public class Lvl8CreateWord : MonoBehaviour {
         float xpos = Random.Range(-65f, 73f);
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
         wordPrefab.position = new Vector3(xpos, -35f, 15f);
-        wordPrefab.velocity = new Vector2(0f, 4f);
-        Invoke("InstantiateWordSouth", 4f);
+        wordPrefab.velocity = new Vector2(0f, 2.5f);
+        Invoke("InstantiateWordSouth", 5f);
     }
 }

@@ -11,7 +11,7 @@ public class Lvl4PlayerMove : MonoBehaviour{
     }
     // Only move the player along the x-axis
     void Update() {
-        _ball.velocity = new Vector2(Input.acceleration.x * 20, 0);
+        _ball.velocity = new Vector2(Input.acceleration.x * 35, 0);
     }
 
 }

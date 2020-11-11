@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 public class PuzzlePiece : MonoBehaviour {
 
     private PolygonCollider2D poly2D;
-    private int pieces;
+    private static int pieces;
 
     private void Start() {
         pieces = 4; // there are 4 pieces of the puzzle
@@ -21,17 +21,18 @@ public class PuzzlePiece : MonoBehaviour {
     }
 
     private void Update() {
-        if (pieces == 0) {
+        if (pieces <= 0) {
+            Debug.Log("Loading Level 10...");
             SceneManager.LoadScene("Level10");
         }
     }
 
     private void OnCollisionEnter2D(Collision2D c) {
-        if (c.gameObject.tag == "puzzle") {
-            Debug.Log("Puzzle piece hit!!");
+        if (c.gameObject.tag == "puzzle") {            
             Destroy(gameObject);
             Destroy(c.gameObject);
             pieces =- 2;
+            Debug.Log("Puzzle piece hit!! Pieces Left:   " + pieces);
         }
     }
 
