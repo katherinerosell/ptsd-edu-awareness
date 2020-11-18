@@ -53,8 +53,7 @@ public class Lvl8TeleportScript : MonoBehaviour {
                     rb.position = sp1.position;
                     break;          
             }
-            rb.AddForce(transform.right * voosh, ForceMode2D.Impulse);
-        
+         if(gameObject.tag == "orb") rb.AddForce(transform.right * voosh, ForceMode2D.Impulse);     
         
     }
 

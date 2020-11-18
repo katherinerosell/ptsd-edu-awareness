@@ -18,11 +18,11 @@ public class Lvl14PlayerCollision : MonoBehaviour {
     private Scene currentSene; // the current scene player is on
     // be sure alpha channels for the colors is 1 or 255!
     [SerializeField]
-    Color medRed;
+    Color medRed; // F37E7E
     [SerializeField]
-    Color deepRed;
+    Color deepRed; // D10A0A
     [SerializeField]
-    Color ogWhite;
+    Color ogWhite; // FFFFFF
 
     private void Start() {
         accelScript = GetComponent<TwoDAccelerometer>();
@@ -47,9 +47,7 @@ public class Lvl14PlayerCollision : MonoBehaviour {
     // to allow the trigger collision to use the same code without having to repeat within
     // this separate function assigns the color in accordance with the hit total
     private void ManageColor() {
-        Debug.Log("Hits:   " + hits);
-        if (hits < 0) hits = 0;
-        if (hits >= 3) SceneManager.LoadScene(currentSene.name); //restart the level if 3 or more hits taken
+        if (hits < 0) hits = 0;        
         switch (hits) {
             case 0:
                 sprite.color = ogWhite;                

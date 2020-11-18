@@ -23,7 +23,9 @@ public class FinishLineScript : MonoBehaviour {
         if (scenename == "Level16") {
             if (c.gameObject.tag == "Player") SceneManager.LoadScene("Level17");
         }
-        
+        if (scenename == "Level17") {
+            if (c.gameObject.tag == "Player") SceneManager.LoadScene("WinScene");
+        }
     }
 
 }
