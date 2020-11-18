@@ -16,7 +16,7 @@ public class Lvl14PlayerCollision : MonoBehaviour {
     private int hits; // on first, on second hit... color is different
     private TwoDAccelerometer accelScript; // the accelerometer script
     private Scene currentSene; // the current scene player is on
-
+    // be sure alpha channels for the colors is 1 or 255!
     [SerializeField]
     Color medRed;
     [SerializeField]
@@ -52,17 +52,20 @@ public class Lvl14PlayerCollision : MonoBehaviour {
         if (hits >= 3) SceneManager.LoadScene(currentSene.name); //restart the level if 3 or more hits taken
         switch (hits) {
             case 0:
-                sprite.color = ogWhite;
+                sprite.color = ogWhite;                
+                ogWhite.a = 1;
                 accelScript.setXMult(20);
                 accelScript.setYMult(22);
                 break;
             case 1:
                 sprite.color = medRed;
+                medRed.a = 1;
                 accelScript.setXMult(40);
                 accelScript.setYMult(46);
                 break;
             case 2:
                 sprite.color = deepRed;
+                deepRed.a = 1;
                 accelScript.setXMult(70);
                 accelScript.setYMult(78);
                 break;

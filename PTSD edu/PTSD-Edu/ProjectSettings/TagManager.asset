@@ -13,6 +13,7 @@ TagManager:
   - puzzle
   - orb
   - breeze
+  - ground
   layers:
   - Default
   - TransparentFX

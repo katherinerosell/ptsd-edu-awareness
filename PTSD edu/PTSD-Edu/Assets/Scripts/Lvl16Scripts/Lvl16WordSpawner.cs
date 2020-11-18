@@ -9,8 +9,10 @@ public class Lvl16WordSpawner : MonoBehaviour {
     private Rigidbody2D wordRB;
     public GameObject breeze;
     private Rigidbody2D breezeRB;
+    private int[] positions;
 
     private void Start() {
+        positions = new int[] {2, -6}; // spawn at either y val
         wordRB = wordText.GetComponent<Rigidbody2D>();
         breezeRB = breeze.GetComponent<Rigidbody2D>();
         Invoke("InstantiateWord", 2f);
@@ -18,21 +20,21 @@ public class Lvl16WordSpawner : MonoBehaviour {
     }
 
     private void InstantiateWord() {
-        float yVal = Random.Range(-34f, 30f);
+        int yval = Random.Range(0, 2);
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
-        wordPrefab.position = new Vector2(playerTransform.position.x+26, yVal);
-        float repeatNum = Random.Range(2f, 4f);
+        wordPrefab.position = new Vector2(playerTransform.position.x+26, positions[yval]); // y is -6
+        wordPrefab.velocity = new Vector2(-15f, 0f);
+        float repeatNum = Random.Range(5f, 10f);
         Debug.Log("WordText Prefab made!!!!");
         Invoke("InstantiateWord", repeatNum);
     }
 
     private void InstantiateBreeze() {
-        float yVal = Random.Range(-34f, 30f);
         Rigidbody2D breezePrefab = Instantiate(breezeRB, transform);
         breezePrefab.gravityScale = 0f;
-        breezePrefab.position = new Vector2(playerTransform.position.x + 30, yVal);
-        breezePrefab.velocity = new Vector2(-4f, 0);
-        float repeatNum = Random.Range(3f, 6f);        
+        breezePrefab.position = new Vector2(playerTransform.position.x + 30, 1f);
+        breezePrefab.velocity = new Vector2(-12f, 0);
+        float repeatNum = Random.Range(4f, 8f);        
         Debug.Log("WordText Prefab made!!!!");
         Invoke("InstantiateWord", repeatNum);
     }
