@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-/*
+/* ---- Meant for Level13 which does not yet exist ----
  * Script used to specifically instantiate the WordText prefab
- * in Level 10. This level is particular because it requires the 
+ * in Level 13. This level is particular because it requires the 
  * word to fall down, with no velocity attached, and collide with 
  * other objects. It loses its isTrigger and no gravity attributes.
  * Date: 10/20/2020

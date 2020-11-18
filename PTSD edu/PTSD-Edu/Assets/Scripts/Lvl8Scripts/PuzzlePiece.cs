@@ -20,19 +20,17 @@ public class PuzzlePiece : MonoBehaviour {
         poly2D = GetComponent<PolygonCollider2D>();
     }
 
-    private void Update() {
-        if (pieces <= 0) {
-            Debug.Log("Loading Level 10...");
-            SceneManager.LoadScene("Level10");
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D c) {
         if (c.gameObject.tag == "puzzle") {            
             Destroy(gameObject);
             Destroy(c.gameObject);
-            pieces =- 2;
+            pieces --; // each puzzle piece has this script, so just minus one per collision
+            // since they're colliding with themselves
             Debug.Log("Puzzle piece hit!! Pieces Left:   " + pieces);
+        }
+        if (pieces == 0) {
+            Debug.Log("Loading Level 10...");
+            SceneManager.LoadScene("Level10");
         }
     }
 

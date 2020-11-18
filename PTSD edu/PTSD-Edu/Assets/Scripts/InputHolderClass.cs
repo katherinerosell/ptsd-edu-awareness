@@ -29,8 +29,8 @@ public class InputHolderClass : MonoBehaviour {
         "Level 13 prompt here",
         "Type in the first word that comes to your mind when you hear the words feeling irritable or having fits of anger",
         "Level 15 prompt here",
-        "Type in the first word that comes to your mind when you hear the words being overly careful",
-        "Type in the first word that comes to your mind when you hear the words being jumpy or easily startled",
+        "Type in the first word that you associate with being overly careful",
+        "Type in the first word that you associate with being jumpy or easily startled",
     };
 
     private void Awake() {
@@ -43,6 +43,7 @@ public class InputHolderClass : MonoBehaviour {
         if (scene.name == "Level10") setLevel(10);
         if (scene.name == "Level14") setLevel(14);
         if (scene.name == "Level16") setLevel(16);
+        if (scene.name == "Level17") setLevel(17);
     }
 
     public void setLevel(int lvl) {

@@ -8,7 +8,7 @@ public class RoomSpin : MonoBehaviour {
     private Transform roomT;
 
     private void Start() {
-        speed = 0.03f;
+        speed = 0.08f;
         roomT = GetComponent<Transform>();
     }
 

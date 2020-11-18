@@ -14,11 +14,13 @@ public class Orb : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D c) {
 
-        //Debug.Log("Game Object: " + c.gameObject.name);
-        
-        if (c.gameObject == portalOrbColor.getColorPortal()) {
-            portalOrbColor.CorrectPortalCollision();
-            // Debug.Log("Orb -- Collision(Collision2D) -- Correct Collision : " + c.gameObject.name);
+        if (c.gameObject.tag != "Player") //statement catches a NullReferenceException Error
+        {
+            if (c.gameObject == portalOrbColor.getColorPortal())
+            {
+                portalOrbColor.CorrectPortalCollision();
+                // Debug.Log("Orb -- Collision(Collision2D) -- Correct Collision : " + c.gameObject.name);
+            }
         }
     }
 

@@ -11,6 +11,8 @@ TagManager:
   - portal
   - pillar
   - puzzle
+  - orb
+  - breeze
   layers:
   - Default
   - TransparentFX

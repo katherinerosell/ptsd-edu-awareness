@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class Lvl7CreateTrackingWord : MonoBehaviour {
     public GameObject wordText;
     private Rigidbody2D wordRB;
-    private int spawnTime; // spawn a new word in this amount of time
+    private float spawnTime; // spawn a new word in this amount of time
     private float myTimer;
 
     public Transform westSpawn;
@@ -26,7 +26,7 @@ public class Lvl7CreateTrackingWord : MonoBehaviour {
 
     void Start() {
         myTimer = 0f;
-        spawnTime = 6;
+        spawnTime = 6f;
         wordRB = wordText.GetComponent<Rigidbody2D>();
         Invoke("InstantiateWord", 2f);
     }
@@ -43,6 +43,7 @@ public class Lvl7CreateTrackingWord : MonoBehaviour {
         Transform tempTransform = spawnPoints[tempInt];
         Rigidbody2D wordPrefab = Instantiate(wordRB, tempTransform);
         wordPrefab.gameObject.AddComponent<TrackingEnemy>();
+        spawnTime = Random.Range(3f, 7f);
         Invoke("InstantiateWord", spawnTime);
     }
 
@@ -51,7 +52,7 @@ public class Lvl7CreateTrackingWord : MonoBehaviour {
         foreach (Rigidbody2D rb in ChildrenObjs) {
             GameObject wordObj = rb.gameObject;
             // if that specific game object is within the circle collider zone, destroy it
-            if (wordObj.GetComponent<TrackingEnemy>().WithinZone() && (wordObj.GetComponent<TrackingEnemy>().getPillarInt() == pillarNum)) {
+            if (wordObj.GetComponent<TrackingEnemy>().getPillarInt() == pillarNum) {
                 Destroy(wordObj);
             }            
         }

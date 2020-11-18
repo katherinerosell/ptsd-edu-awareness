@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
  * This script is attached to PillarA and PillarB to handle
- * teleportation when the player collides with them. 
+ * teleportation when the player collides with them. They are the
+ * main squares in the scene.
  */ 
 public class PillarWordTextCol : MonoBehaviour {
 

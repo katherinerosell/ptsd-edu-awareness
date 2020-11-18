@@ -9,12 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class FinishLineScript : MonoBehaviour {
 
-    private BoxCollider2D finishLineBox;
-
-    private void Start() {
-        finishLineBox = GetComponent<BoxCollider2D>();
-    }
-
     // if the player hits the finish line, move on to level 16
     private void OnCollisionEnter2D(Collision2D c) {
         if (c.gameObject.tag == "Player") SceneManager.LoadScene("Level16");

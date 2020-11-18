@@ -20,8 +20,8 @@ public class Lvl4CreateWord : MonoBehaviour {
         min = 3f; max = 5f;
         wordRB = wordRB.GetComponent<Rigidbody2D>();
         myTimer = 0f;
-        Invoke("InstantiateFallingWord", 1.5f);
-        InvokeRepeating("FallRate", 2, 10);
+        Invoke("InstantiateFallingWord", 2f);
+        //InvokeRepeating("FallRate", 2, 10);
     }
 
     void Update() {
@@ -37,11 +37,13 @@ public class Lvl4CreateWord : MonoBehaviour {
         float Xpos = Random.Range(-56f, 60f);
         wordPrefab.position = new Vector3(Xpos, 35, 15);
         wordPrefab.velocity = new Vector2(0f, fallVelocity); // move downwards
-        Invoke("InstantiateFallingWord", Random.Range(min, max));
+        float repeatNum = Random.Range(min, max);
+        Invoke("InstantiateFallingWord", repeatNum);
     }
-
+    // shrink spawn time so word spawns more frequently - but it
+    // makes gameplay TOO difficult
     private void FallRate() {
-        if (min <= 2.4f) { // repeats 6 times until 3 reached 2.4; approx. 60 second
+        if (min <= 3.0f) { // repeats about 10 times
 
         }
         else {

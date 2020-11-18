@@ -8,18 +8,19 @@ public class IAmPlayer : MonoBehaviour {
 
     private static int blipPoints; // health points
     private Scene scene;
-    //public Text hitText;
     
     void Start() {
         scene = SceneManager.GetActiveScene();
         blipPoints = 3;
-        //hitText = hitText.GetComponent<Text>();
     }
+
+    public int getBlipPoints() { return blipPoints; }
+    public void setBlipPoints(int n) { blipPoints += n;  }
 
     // function called by the WordText object, since it uses isTrigger collider
     public void playerHit() {
         blipPoints--; // when player is hit, decrement blips
-        Debug.Log("Blip Points = " + blipPoints);
+        //Debug.Log("Blip Points = " + blipPoints);
     }
 
     private void Update() {

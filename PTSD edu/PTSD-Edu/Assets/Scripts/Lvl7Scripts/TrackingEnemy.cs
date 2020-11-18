@@ -23,7 +23,7 @@ public class TrackingEnemy : MonoBehaviour {
     private void Start() {
         _pillarInt = 2; // pillarA = 0, pillarB = 1
         inZone = false;
-        speed = 3f;
+        speed = 6f;
         _player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         wordRB = GetComponent<Rigidbody2D>();
     }
@@ -39,7 +39,7 @@ public class TrackingEnemy : MonoBehaviour {
     }
 
     // when WordText collides with pillar's circle trigger collider
-    private void OnTriggerEnter2D(Collider2D c) {
+    private void OnTriggerEnter2D(Collider2D c) {        
         if (c.gameObject.tag == "pillar") { // circle collider is the pillar
             if (c.gameObject.name == "PillarA") { _pillarInt = 0; }
             else if(c.gameObject.name == "PillarB") { _pillarInt = 1; } // pillarB = 1

@@ -18,7 +18,8 @@ public class Lvl8CreateWord : MonoBehaviour {
         float xpos = Random.Range(-65f, 73f);
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
         wordPrefab.position = new Vector3(xpos, -35f, 15f);
-        wordPrefab.velocity = new Vector2(0f, 2.5f);
-        Invoke("InstantiateWordSouth", 5f);
+        wordPrefab.velocity = new Vector2(0f, 5f);
+        float repeatNum = Random.Range(2f, 5f);
+        Invoke("InstantiateWordSouth", repeatNum);
     }
 }
