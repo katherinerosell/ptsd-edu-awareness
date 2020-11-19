@@ -21,7 +21,7 @@ public class Lvl16WordBlock : MonoBehaviour {
         float xVal = Random.Range(-34f, 30f);
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
         wordPrefab.position = new Vector2(xVal, playerTransform.position.y+30);
-        float repeatNum = Random.Range(1f, 3f);        
+        float repeatNum = Random.Range(0.2f, 0.5f);        
         Invoke("InstantiateWord", repeatNum);
     }
 

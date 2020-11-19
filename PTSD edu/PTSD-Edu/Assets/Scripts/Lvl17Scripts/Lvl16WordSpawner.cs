@@ -24,7 +24,7 @@ public class Lvl16WordSpawner : MonoBehaviour {
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
         wordPrefab.position = new Vector2(playerTransform.position.x+40, positions[yval]); // y is -6
         wordPrefab.velocity = new Vector2(-15f, 0f);
-        float repeatNum = Random.Range(5f, 9f);
+        float repeatNum = Random.Range(3f, 5f);
         Invoke("InstantiateWord", repeatNum);
     }
 

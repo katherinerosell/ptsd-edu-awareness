@@ -6,11 +6,12 @@ public class Lvl10PlayerMove : MonoBehaviour {
     private Rigidbody2D _ball;
 
     void Start() {
+        Debug.Log("Lvl10PlayerMove - I Am Alive!");
         _ball = GetComponent<Rigidbody2D>();
     }
     // Only move the player along the x-axis
-    void Update() {
-        _ball.AddForce(new Vector2(Input.acceleration.x* 20, _ball.velocity.y + 0));
+    void FixedUpdate() {
+        _ball.AddForce(new Vector2(Input.acceleration.x* 180, _ball.velocity.y + 0));
     }
 
 }

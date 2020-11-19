@@ -55,7 +55,7 @@ public class CreateWordEnemyText : MonoBehaviour {
         }
         if (131 <= myTimer && myTimer <= 132) {
             // move on to level 3 after ~30 seconds of gameplay
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Level3");
         }
     }
 
@@ -77,7 +77,7 @@ public class CreateWordEnemyText : MonoBehaviour {
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
         float Ypos = Random.Range(-18f, 18f);
         wordPrefab.position = new Vector3(63f, Ypos, 15);
-        wordPrefab.velocity = new Vector2(-8f, 0f);
+        wordPrefab.velocity = new Vector2(-7f, 0f);
         Invoke("InstantiateEnemyEAST", Random.Range(2f, 4f));
         if (phase2Time-4 <= myTimer && myTimer <= phase2Time) {
             // Debug.Log("CreateEnemyWordText -- Instantiate from NORTH");
@@ -89,8 +89,8 @@ public class CreateWordEnemyText : MonoBehaviour {
         Rigidbody2D wordPrefab = Instantiate(wordRB, transform);
         float Xpos = Random.Range(-40f, 63f);
         wordPrefab.position = new Vector3(Xpos, 18, 15);
-        wordPrefab.velocity = new Vector2(0f, -6.5f);//move downwards
-        Invoke("InstantiateEnemyNORTH", Random.Range(4f, 6f));
+        wordPrefab.velocity = new Vector2(0f, -4f);//move downwards
+        Invoke("InstantiateEnemyNORTH", Random.Range(5f, 7f));
         if (phase3Time - 5 <= myTimer && myTimer <= phase3Time) {
             // Debug.Log("CreateEnemyWordText -- Instantiate from SOUTH");
             Invoke("InstantiateEnemySOUTH", 1f);

@@ -206,12 +206,12 @@ PrefabInstance:
     - target: {fileID: 8289247465298187919, guid: a064dd59ea03b4d47bb5be6574e51d89,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 1.1315336
       objectReference: {fileID: 0}
     - target: {fileID: 8289247465298187919, guid: a064dd59ea03b4d47bb5be6574e51d89,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.88
+      value: 42.89543
       objectReference: {fileID: 0}
     - target: {fileID: 8289247465298187919, guid: a064dd59ea03b4d47bb5be6574e51d89,
         type: 3}
@@ -1716,12 +1716,12 @@ PrefabInstance:
     - target: {fileID: 278218268874851860, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 278218268874851860, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}
       propertyPath: m_GravityScale
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 278218268874851862, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}

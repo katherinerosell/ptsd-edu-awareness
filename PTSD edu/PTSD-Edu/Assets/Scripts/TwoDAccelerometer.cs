@@ -15,7 +15,7 @@ public class TwoDAccelerometer : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        _ball.velocity = new Vector2(Input.acceleration.x * xMult, (Input.acceleration.y + 0.3f) * yMult);
+        _ball.velocity = new Vector2(Input.acceleration.x * xMult, (Input.acceleration.y + 0.8f) * yMult);
     }
 
     public void setXMult(int tempX) {
