@@ -13,7 +13,7 @@ public class PlayerJump : MonoBehaviour {
     }
 
     public void Jump() {
-        if(grounded) playerRB.AddForce(new Vector2(0f, 180f), ForceMode2D.Impulse);
+        if(grounded) playerRB.AddForce(new Vector2(0f, 120f), ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter2D(Collision2D c) {

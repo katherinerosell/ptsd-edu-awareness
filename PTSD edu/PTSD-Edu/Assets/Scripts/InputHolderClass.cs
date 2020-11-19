@@ -14,20 +14,20 @@ public class InputHolderClass : MonoBehaviour {
     public static int _lvlNum;
     private Scene scene;
     private static string[] prompts = new string[] {
-        "Type in the first word that comes to your mind when you hear the words upsetting thoughts/images",
-        "Type in the first word that comes to your mind when you hear the word nightmares",
-        "Type in the first word that comes to your mind when you hear the words recurring events/reexperiencing",
-        "Type in the first word that comes to your mind when you hear the words feeling upset",
+        "Type in the first word that you associate with upsetting thoughts/images",
+        "Type in the first word that you associate with nightmares",
+        "Type in the first word that you associate with recurring events/reexperiencing",
+        "Type in the first word that you associate with feeling upset",
         "Level 5 prompt here",
         "Level 6 prompt here",
-        "Trying to avoid activities, people, or places that remind you of the traumatic event",
-        "Type in the first word that comes to your mind when you hear the words not being able to remember an important part of an event",
+        "Type the first word that you associate with trying to avoid activities, people, or places that remind you of a traumatic event",
+        "Type the first word that you associate with not being able to remember an important part of an event",
         "Level 9 prompt here",
-        "Type in the first word that comes to your mind when you hear the words not feeling close to people around you",
+        "Type in the first word that you associate with not feeling close to people around you",
         "Level 11 prompt here",
         "Level 12 prompt here",
         "Level 13 prompt here",
-        "Type in the first word that comes to your mind when you hear the words feeling irritable or having fits of anger",
+        "Type in the first word that you associate with feeling irritable or having fits of anger",
         "Level 15 prompt here",
         "Type in the first word that you associate with being overly careful",
         "Type in the first word that you associate with being jumpy or easily startled",
@@ -35,6 +35,7 @@ public class InputHolderClass : MonoBehaviour {
 
     private void Awake() {
         scene = SceneManager.GetActiveScene();
+        //if (scene.name == "Level1-2") setLevel(1);
         if (scene.name == "Level3") setLevel(3);
         // Debug.Log("InputHolderClass  --  Level is: " + _lvlNum);
         if (scene.name == "Level4") setLevel(4);

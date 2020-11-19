@@ -263,7 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9585b761660e0dc40afc6040eed0dced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRB: {fileID: 1984678700}
 --- !u!1 &535076441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,17 +1711,17 @@ PrefabInstance:
     - target: {fileID: 278218268874851860, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}
       propertyPath: m_LinearDrag
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 278218268874851860, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 278218268874851860, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}
       propertyPath: m_GravityScale
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 278218268874851862, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}
@@ -1824,12 +1823,6 @@ PrefabInstance:
 --- !u!4 &1984678699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 278218268874851862, guid: 209e4cc0f62759947a0e00134f0f06d1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1984678698}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1984678700 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 278218268874851860, guid: 209e4cc0f62759947a0e00134f0f06d1,
     type: 3}
   m_PrefabInstance: {fileID: 1984678698}
   m_PrefabAsset: {fileID: 0}

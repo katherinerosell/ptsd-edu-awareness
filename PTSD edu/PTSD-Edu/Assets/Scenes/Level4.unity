@@ -1183,7 +1183,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Instructions: It''s rainy in this level. Use your umbrella to keep the
-    word from reaching the ground! If it hits the ground 3 times you restart!'
+    word from reaching the ground! You can do it!'
 --- !u!222 &1258075506
 CanvasRenderer:
   m_ObjectHideFlags: 0

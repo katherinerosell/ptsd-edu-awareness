@@ -13,23 +13,33 @@ public class MainMenuSelection : MonoBehaviour {
 
     public Button beginB;
     public Button instructionsB;
+    private bool instrEnabled; // toggle enabled when button clicked
+    
     public Button lvlSelectB;
+    private bool lvlsEnabled;// toggle enabled when button clicked
+
     public GameObject lvlButtons;
     public Text instrucText;
 
     private void Start() {
+        instrEnabled = false;
+        lvlsEnabled = false;
         lvlButtons.SetActive(false);
         instrucText.enabled = false;
     }
 
     public void InstructionButtonClick() {
-        lvlButtons.SetActive(false);
-        instrucText.enabled = true;
+        lvlsEnabled = false;
+        lvlButtons.SetActive(lvlsEnabled);        
+        instrEnabled = !instrEnabled;
+        instrucText.enabled = instrEnabled;
     }
 
     public void LevelSelectionClick() {
-        instrucText.enabled = false;
-        lvlButtons.SetActive(true);
+        instrEnabled = false;
+        instrucText.enabled = instrEnabled;        
+        lvlsEnabled = !lvlsEnabled;
+        lvlButtons.SetActive(lvlsEnabled);
     }
 
     public void LevelBegin(string sceneName) {

@@ -2017,8 +2017,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Instructions: Get the enemies close to the pillars. Then bump into a pillar
-    to destroy nearby enemies!'
+  m_Text: 'Instructions: Bump into the pillars to get some help destroying the words!
+    Wait until the word is close.'
 --- !u!222 &2008466248
 CanvasRenderer:
   m_ObjectHideFlags: 0
