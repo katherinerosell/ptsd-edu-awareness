@@ -30,7 +30,7 @@ public class Lvl16WordBlock : MonoBehaviour {
         Rigidbody2D breezePrefab = Instantiate(breezeRB, transform);
         breezePrefab.position = new Vector2(xVal, playerTransform.position.y + 30);
         breezePrefab.gravityScale = 0.1f;
-        float repeatNum = Random.Range(4f, 6f);
+        float repeatNum = Random.Range(3f, 6f);
         Invoke("InstantiateBreeze", repeatNum);
     }
     

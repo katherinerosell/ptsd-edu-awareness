@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 278218268874851860, guid: 209e4cc0f62759947a0e00134f0f06d1,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 278218268874851862, guid: 209e4cc0f62759947a0e00134f0f06d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2078,7 +2083,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Developed by Wan Hsiang Chen and Katherine Rosell to help adolecents through
+  m_Text: Developed by Wan Hsiang Chen and Katherine Rosell to help adolescents through
     their trauma
 --- !u!222 &1173390600
 CanvasRenderer:

@@ -11,7 +11,7 @@ public class Lvl10PlayerMove : MonoBehaviour {
     }
     // Only move the player along the x-axis
     void FixedUpdate() {
-        _ball.AddForce(new Vector2(Input.acceleration.x* 180, _ball.velocity.y + 0));
+        _ball.AddForce(new Vector2(Input.acceleration.x* 190, _ball.velocity.y + 0));
     }
 
 }

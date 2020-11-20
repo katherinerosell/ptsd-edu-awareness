@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eb246e10e4fa04b9e14f38b241035a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blipPoint1: {fileID: 0}
+  blipPoint2: {fileID: 0}
+  blipPoint3: {fileID: 0}
+  grey: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &278218268874851863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +128,7 @@ Rigidbody2D:
   m_Mass: 2.92
   m_LinearDrag: 0
   m_AngularDrag: 5
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
